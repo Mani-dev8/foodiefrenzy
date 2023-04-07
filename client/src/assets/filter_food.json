@@ -1,0 +1,204 @@
+[
+    {
+        "filterName": "Italian",
+        "image": "https://iili.io/HwZWALF.png",
+        "dishes": [
+            {
+                "name": "Margherita Pizza",
+                "image": "https://iili.io/HwPp8gf.md.png",
+                "options": [
+                    {
+                        "half": 200,
+                        "full": 350
+                    }
+                ]
+            },
+            {
+                "name": "Pasta Carbonara",
+                "image": "https://iili.io/HwPZ3qx.md.png",
+                "options": [
+                    {
+                        "half": 150,
+                        "full": 250
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "filterName": "Mexican",
+        "image": "https://iili.io/HwZ8htj.png",
+        "dishes": [
+            {
+                "name": "Taco",
+                "image": "https://iili.io/HwPkevR.md.png",
+                "options": [
+                    {
+                        "half": 180,
+                        "full": 300
+                    }
+                ]
+            },
+            {
+                "name": "Burrito",
+                "image": "https://static.wixstatic.com/media/aef13b_acb617e0fc2045b58892fdccd251715f~mv2.png/v1/fill/w_614,h_469,al_c,lg_1,q_85,enc_auto/Fiesta%20Fajita%20Burrito.png",
+                "options": [
+                    {
+                        "half": 150,
+                        "full": 250
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "filterName": "Chinese",
+        "image": "https://iili.io/HwZzMW7.png",
+        "dishes": [
+            {
+                "name": "Manchurian",
+                "image": "https://iili.io/HwPjEap.md.png",
+                "options": [
+                    {
+                        "half": 100,
+                        "full": 200
+                    }
+                ]
+            },
+            {
+                "name": "Noodles",
+                "image": "https://iili.io/HwPWNMx.md.png",
+                "options": [
+                    {
+                        "half": 120,
+                        "full": 220
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "filterName": "Indian",
+        "image": "https://iili.io/HwZNuf9.png",
+        "dishes": [
+            {
+                "name": "Butter Chicken",
+                "image": "https://iili.io/HwP088u.md.png",
+                "options": [
+                    {
+                        "half": 200,
+                        "full": 350
+                    }
+                ]
+            },
+            {
+                "name": "Biryani",
+                "image": "https://iili.io/HwiMhyF.md.png",
+                "options": [
+                    {
+                        "half": 120,
+                        "full": 210
+                    }
+                ]
+            },
+            {
+                "name": "Palak Paneer",
+                "image": "https://iili.io/HNzyCYv.png",
+                "options": [
+                    {
+                        "half": 150,
+                        "full": 250
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "filterName": "Thai",
+        "image": "https://iili.io/HwZ6fwX.png",
+        "dishes": [
+            {
+                "name": "Pad Thai",
+                "image": "https://iili.io/Hw6iwhv.md.png",
+                "options": [
+                    {
+                        "half": 180,
+                        "full": 300
+                    }
+                ]
+            },
+            {
+                "name": "Green Curry",
+                "image": "https://iili.io/Hw6OV72.md.png",
+                "options": [
+                    {
+                        "half": 120,
+                        "full": 220
+                    }
+                ]
+            },
+            {
+                "name": "Tom Yum Soup",
+                "image": "https://iili.io/HNIJY3g.md.png",
+                "options": [
+                    {
+                        "half": 120,
+                        "full": 220
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "filterName": "Mediterranean",
+        "image": "https://iili.io/HwZRmUF.png",
+        "dishes": [
+            {
+                "name": "Falafel Wrap",
+                "image": "https://iili.io/Hw6EHyG.md.png",
+                "options": [
+                    {
+                        "half": 150,
+                        "full": 250
+                    }
+                ]
+            },
+            {
+                "name": "Hummus Plate",
+                "image": "https://iili.io/Hw65Nig.md.png",
+                "options": [
+                    {
+                        "half": 100,
+                        "full": 200
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "filterName": "American",
+        "image": "https://iili.io/HwZ1Xje.png",
+        "dishes": [
+            {
+                "name": "Burger",
+                "image": "https://iili.io/Hw6B5Je.md.png",
+                "options": [
+                    {
+                        "half": 120,
+                        "full": 220
+                    }
+                ]
+            },
+            {
+                "name": "French Fries",
+                "image": "https://iili.io/Hw4mUut.md.png",
+                "options": [
+                    {
+                        "half": 80,
+                        "full": 150
+                    }
+                ]
+            }
+        ]
+    }
+]
