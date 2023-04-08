@@ -7,8 +7,6 @@
     "devStart": "nodemon index.js",
     "start":"node index.js",
     "build":"npm i"
-
-
   },
   "author": "manish mahto",
   "license": "ISC",
