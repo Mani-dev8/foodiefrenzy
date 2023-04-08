@@ -5,7 +5,6 @@ const mongodb = require('./db');
 
 const app = express()
 const port = process.env.PORT
-mongodb();
 
 
 //middleware
@@ -17,7 +16,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use(express.json())
-
+mongodb();
 app.use('/api/new', require('./Routes/userRoute'))
 app.use("/api", require('./Routes/cardData'))
 app.use('/api', require('./Routes/filterData'))
