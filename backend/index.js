@@ -17,6 +17,9 @@ app.use((req, res, next) => {
 });
 app.use(express.json())
 mongodb();
+app.use("/",(req,res)=>{
+    res.send("welcome to foodiefrenzy")
+})
 app.use('/api/new', require('./Routes/userRoute'))
 app.use("/api", require('./Routes/cardData'))
 app.use('/api', require('./Routes/filterData'))
