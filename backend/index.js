@@ -19,8 +19,8 @@ app.use((req, res, next) => {
 app.use(express.json())
 
 app.use('/api/new', require('./Routes/userRoute'))
-app.use("/api/", require('./Routes/cardData'))
-app.use('/api/', require('./Routes/filterData'))
+app.use("/api", require('./Routes/cardData'))
+app.use('/api', require('./Routes/filterData'))
 app.use('/api/order', require('./Routes/orderRoute'));
 app.listen(port, () => {
     console.log(`app listening on port ${port}`)

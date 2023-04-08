@@ -1,14 +1,14 @@
 const express=require('express');
 const route=express.Router();
 const mongoose=require("mongoose")
+const fetchFilterModel = mongoose.model('fetchFilter', {}, 'filterItems')
 route.post('/filterData',async(req,res)=>{
     try {
-        const collection = mongoose.connection.db.collection('filterItems');
-        const filterItems = await collection.find({}).toArray();
+        const filterItems = await fetchFilterModel.find({});
         res.json(filterItems)
     } catch (error) {
         console.log("fail to fetch data MongoDB",error);
-        res.status.json({ message: 'Failed to fetch data from MongoDB' })
+        res.status(400).json({ message: 'Failed to fetch data from MongoDB' })
     }
 })
-module.exports = route;     
+module.exports = route;       

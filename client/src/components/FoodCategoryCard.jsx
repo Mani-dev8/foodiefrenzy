@@ -14,9 +14,6 @@ function FoodCategoryCard({name}) {
   const fetchCategoryData = async () => {
     const response = await fetch("/api/filterData", {
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
     });
     data = await response.json();
     
