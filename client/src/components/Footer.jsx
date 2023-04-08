@@ -31,7 +31,7 @@ function Footer({isDark}) {
           </Link>
           <div className=" lg:max-w-sm">
             <p className="text-sm dark:text-zinc-600 text-zinc-300">
-              designed by Manish Mahto
+              Developed by Manish Mahto
             </p>
           </div>
         </div>

@@ -86,7 +86,7 @@ function MyCarousel() {
           );
         })}
         <button
-          className="absolute top-1/2 left-4 -translate-y-1/2 w-8 h-8 lg:w-10 lg:h-10 bg-white bg-opacity-50 rounded-full m-2 hover:bg-opacity-30 active:opacity-20"
+          className="absolute top-1/2 left-4 -translate-y-1/2 w-8 h-8 lg:w-10 lg:h-10 bg-white bg-opacity-10 rounded-full m-2 hover:bg-opacity-20 active:opacity-20"
           onClick={prev}
         >
           <svg
@@ -103,7 +103,7 @@ function MyCarousel() {
           </svg>
         </button>
         <button
-          className="absolute top-1/2 right-4 -translate-y-1/2 w-8 h-8 lg:w-10 lg:h-10 bg-white bg-opacity-50 rounded-full m-2 hover:bg-opacity-30 active:opacity-20"
+          className="absolute top-1/2 right-4 -translate-y-1/2 w-8 h-8 lg:w-10 lg:h-10 bg-white bg-opacity-10 rounded-full m-2 hover:bg-opacity-20 active:opacity-20"
           onClick={next}
         >
           <svg

@@ -8,11 +8,10 @@ import {
   useStateContext,
   useStateContextTheme,
 } from "./ContextReducer";
- 
+
 function Header() {
   let totalValue = useStateContext().length;
- 
-  
+
   const dispatch = useDispatchContextTheme();
   let changeThemeState = useStateContextTheme();
   const [cartView, setCartView] = useState(false);
@@ -404,13 +403,17 @@ function Header() {
           className="flex flex-row items-center gap-2 hover:bg-emerald-600 dark:text-zinc-900 transition-all justify-start py-4 px-12"
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-5 h-5   "
+            id="Layer_1"
+            className="h-5 w-5 fill-current "
+            style={{ enableBackground: "new 0 0 128 128" }}
+            version="1.1"
+            viewBox="0 0 128 128"
           >
-            <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
-            <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+            <g>
+              <path
+                d="M120,58.3l-0.2-0.7L64.5,2.5l0,0l0,0L8,58.3V127h45V82h20v45h47V58.3z M112,119H81V74H45v45H16V62.6l48.5-48.8L112,61.7   V119z"
+              />
+            </g>
           </svg>
           <li>Home</li>
         </Link>
@@ -448,6 +451,27 @@ function Header() {
             <path d="M0 0h48v48H0z" fill="none" />
           </svg>
           <li>Cart</li>
+        </Link>
+        <Link
+          to={"/about_us"}
+          className="flex flex-row items-center gap-2 hover:bg-emerald-600 dark:text-zinc-900 transition-all justify-start py-4 px-12"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-[1.35rem] h-[1.35rem]"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+            />
+          </svg>
+
+          <li>About Us</li>
         </Link>
         {localStorage.getItem("authToken") !== null ? (
           <Link
