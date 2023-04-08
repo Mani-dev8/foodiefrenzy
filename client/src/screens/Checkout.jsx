@@ -35,7 +35,7 @@ function Checkout() {
     const order_form = document.getElementById("order-form");
     if (order_form.checkValidity()){
       const total = document.getElementById("total").innerText;
-      const res = await fetch("/order/order-create", {
+      const res = await fetch("/api/order/order-create", {
         method: "post",
         headers: {
           "content-type": "application/json",
@@ -54,7 +54,7 @@ function Checkout() {
         handler: async function (response) {
           const address = `${document.getElementById("fullname").value} | ${document.getElementById("contact_no").value} | ${document.getElementById("billing-address").value}`;
           const accountEmail= window.localStorage.getItem("accountEmail").toString()
-          const res = await fetch("/order/verify", {
+          const res = await fetch("/api/order/verify", {
             method: "post",
             headers: {
               "content-type": "application/json",

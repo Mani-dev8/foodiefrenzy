@@ -8,7 +8,7 @@ export default function IndexPage() {
   const [foodCategory, setFoodCategory] = useState([]);
   const [foodItems, setFoodItems] = useState([]);
   const fetchData = async ()=> {
-      const response =await fetch("/cardData", {
+      const response =await fetch("/api/cardData", {
         method: "POST",
         headers: { 
           "content-type": "application/json",

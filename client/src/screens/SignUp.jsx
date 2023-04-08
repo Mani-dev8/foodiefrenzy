@@ -14,7 +14,7 @@ function SignUp() {
          password: credentials.password,
          email: credentials.email,
         };
-        const formData = await fetch("/new/insertuser", {
+        const formData = await fetch("/api/new/insertuser", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(userData),

@@ -12,7 +12,7 @@ function FoodCategoryCard({name}) {
 
   let data;
   const fetchCategoryData = async () => {
-    const response = await fetch("/filterData", {
+    const response = await fetch("/api/filterData", {
     });
     data = await response.json();
     

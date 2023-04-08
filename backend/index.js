@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv=require('dotenv');
-dotenv.config({path:'./config.env'})
+dotenv.config({path:'./.env'})
 const mongodb = require('./db');
 
 const app = express()
@@ -18,10 +18,10 @@ app.use((req, res, next) => {
 });
 app.use(express.json())
 
-app.use('/new', require('./Routes/userRoute'))
-app.use("/", require('./Routes/cardData'))
-app.use('/', require('./Routes/filterData'))
-app.use('/order', require('./Routes/orderRoute'));
+app.use('/api/new', require('./Routes/userRoute'))
+app.use("/api/", require('./Routes/cardData'))
+app.use('/api/', require('./Routes/filterData'))
+app.use('/api/order', require('./Routes/orderRoute'));
 app.listen(port, () => {
     console.log(`app listening on port ${port}`)
 })

@@ -6,7 +6,7 @@ function Setting() {
   const dispatch = useDispatchContext();
   const [orderData, setOrderData] = useState([]);
   async function fetchData() {
-    const res = await fetch("/order/order-data", {
+    const res = await fetch("/api/order/order-data", {
       method: "post",
       headers: {
         "content-type": "application/json",
