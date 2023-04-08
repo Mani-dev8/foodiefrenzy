@@ -1,7 +1,7 @@
 const express=require('express');
 const route=express.Router();
 const mongoose=require("mongoose")
-route.get('/filterData',async(req,res)=>{
+route.post('/filterData',async(req,res)=>{
     try {
         const collection = mongoose.connection.db.collection('filterItems');
         const filterItems = await collection.find({}).toArray();
