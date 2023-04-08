@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "devStart": "nodemon index.js",
-    "start":"node index.js",
-    "build":"npm i"
+    "start":"node index.js"
   },
   "author": "manish mahto",
   "license": "ISC",
