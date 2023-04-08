@@ -16,7 +16,7 @@ export default function IndexPage() {
       });
       const data=await response.json()
       const foodItemsData=data[0];
-      console.log('type of foodItemsData',typeof foodItemsData);
+      console.log('type of foodItemsData',foodItemsData);
       window.localStorage.setItem("FoodData", JSON.stringify(foodItemsData));
       const foodCategoryData=data[1]
       setFoodCategory(foodCategoryData)

@@ -13,19 +13,25 @@ function FoodCategoryCard({name}) {
   let data;
   const fetchCategoryData = async () => {
     const response = await fetch("/filterData", {
-      method: "post",
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
     });
     data = await response.json();
+    
+    console.log("🚀 ~ file: FoodCategoryCard.jsx:22 ~ fetchCategoryData ~ data   ~~~  :", data)
 
     // console.log(JSON.stringify(data));
-    let index = 0;
-
-    data.map((obj) => {
-      setCategoryData(obj);
-      console.log(obj);
-    });
-    const items = data[0];
-    console.log(items);
+    let index = 0; 
+setCategoryData(data)
+    // data.map((obj) => {
+    //   setCategoryData(obj);
+    //   console.log("🚀 ~ file: FoodCategoryCard.jsx:29 ~ data.map ~ obj   ~~~  :", obj)
+      
+    // });
+    const items = data;
+    console.log("🚀 ~ file: FoodCategoryCard.jsx:35 ~ fetchCategoryData ~ items   ~~~  :", items)
     items.forEach((element) => {
       console.log("element", element);
     });
