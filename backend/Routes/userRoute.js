@@ -5,7 +5,6 @@ const User=require('../model/usersModel');
 const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
 const jwtSecret="HiMyNameIsManishMahtoLoveCoding"
-
 routes.post('/insertuser',body('name').isString(),body('email').isEmail(),body('password').isLength({min:5}),async (req,res)=>{
     const errors=validationResult(req);
     if(!errors.isEmpty()) {
