@@ -6,15 +6,18 @@ function Setting() {
   const dispatch = useDispatchContext();
   const [orderData, setOrderData] = useState([]);
   async function fetchData() {
-    const res = await fetch("/api/order/order-data", {
-      method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        accountEmail: window.localStorage.getItem("accountEmail"),
-      }),
-    });
+    const res = await fetch(
+      "https://foodiefrenzy.vercel.app/api/order/order-data",
+      {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          accountEmail: window.localStorage.getItem("accountEmail"),
+        }),
+      }
+    );
     const data = await res.json();
     setOrderData(data);
   }

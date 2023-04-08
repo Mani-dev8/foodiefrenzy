@@ -14,11 +14,14 @@ function SignUp() {
          password: credentials.password,
          email: credentials.email,
         };
-        const formData = await fetch("/api/new/insertuser", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(userData),
-        });
+        const formData = await fetch(
+          "https://foodiefrenzy.vercel.app/api/new/insertuser",
+          {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(userData),
+          }
+        );
          
         const message = await formData.json();          
            if (message.success === true) {

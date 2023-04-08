@@ -8,12 +8,15 @@ export default function IndexPage() {
   const [foodCategory, setFoodCategory] = useState([]);
   const [foodItems, setFoodItems] = useState([]);
   const fetchData = async ()=> {
-      const response =await fetch("/api/cardData", {
-        method: "POST",
-        headers: { 
-          "content-type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://foodiefrenzy.vercel.app/api/cardData",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      );
       const data=await response.json()
       const foodItemsData=data[0];
       console.log('type of foodItemsData',foodItemsData);

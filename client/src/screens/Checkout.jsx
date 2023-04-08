@@ -35,13 +35,16 @@ function Checkout() {
     const order_form = document.getElementById("order-form");
     if (order_form.checkValidity()){
       const total = document.getElementById("total").innerText;
-      const res = await fetch("/api/order/order-create", {
-        method: "post",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ amount: total }),
-      });
+      const res = await fetch(
+        "https://foodiefrenzy.vercel.app/api/order/order-create",
+        {
+          method: "post",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ amount: total }),
+        }
+      );
       const { id, amount, currency } = await res.json();
       const options = {
         key: "rzp_test_A0kVgihb52ODEI",
@@ -54,20 +57,23 @@ function Checkout() {
         handler: async function (response) {
           const address = `${document.getElementById("fullname").value} | ${document.getElementById("contact_no").value} | ${document.getElementById("billing-address").value}`;
           const accountEmail= window.localStorage.getItem("accountEmail").toString()
-          const res = await fetch("/api/order/verify", {
-            method: "post",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify({
-              razorpay: response,
-              orderData: {
-                address: address,
-                itemsOrdered: data,
-                accountEmail:accountEmail
-              }
-            }),
-          });
+          const res = await fetch(
+            "https://foodiefrenzy.vercel.app/api/order/verify",
+            {
+              method: "post",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify({
+                razorpay: response,
+                orderData: {
+                  address: address,
+                  itemsOrdered: data,
+                  accountEmail: accountEmail,
+                },
+              }),
+            }
+          );
           const message = await res.json();
           if (message.success) {
             downloadPDF();

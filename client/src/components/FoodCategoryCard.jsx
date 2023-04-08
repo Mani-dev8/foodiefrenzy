@@ -12,9 +12,12 @@ function FoodCategoryCard({name}) {
 
   let data;
   const fetchCategoryData = async () => {
-    const response = await fetch("/api/filterData", {
-      method: "POST",
-    });
+    const response = await fetch(
+      "https://foodiefrenzy.vercel.app/api/filterData",
+      {
+        method: "POST",
+      }
+    );
     data = await response.json();
     
     console.log("🚀 ~ file: FoodCategoryCard.jsx:22 ~ fetchCategoryData ~ data   ~~~  :", data)

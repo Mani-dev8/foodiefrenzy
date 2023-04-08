@@ -9,11 +9,14 @@ function SignIn() {
     async function handleSubmit(e){
         const userData={email:credentials.email,password:credentials.password}
         e.preventDefault()
-        const form= await fetch("/api/new/signin",{
-            method:"POST",
-            headers:{"content-type":"application/json"},
-            body:JSON.stringify(userData)  
-        })
+        const form = await fetch(
+          "https://foodiefrenzy.vercel.app/api/new/signin",
+          {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(userData),
+          }
+        );
         const message=await form.json()
         if(message.message===true) {
           toast(
