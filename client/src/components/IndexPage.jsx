@@ -10,7 +10,7 @@ export default function IndexPage() {
   const fetchData = async ()=> {
       const response =await fetch("/cardData", {
         method: "POST",
-        header: { 
+        headers: { 
           "content-type": "application/json",
         },
       });
