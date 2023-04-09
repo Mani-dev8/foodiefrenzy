@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FilterCard from "./FilterCard";
+import Loader from "./Loader";
 export var handleAll;
 function FoodCategoryCard({name}) {
-  
+  const [isLoading, setIsLoading] = useState(true);
   const [categoryData, setCategoryData] = useState([]);
   const [filterData, setFilterData] = useState([]);
   const [updatedData, setUpdatedData] = useState([]);
@@ -31,6 +32,7 @@ setCategoryData(data)
       
     // });
     const items = data;
+    setIsLoading(false)
     console.log("🚀 ~ file: FoodCategoryCard.jsx:35 ~ fetchCategoryData ~ items   ~~~  :", items)
     items.forEach((element) => {
       console.log("element", element);
@@ -90,76 +92,78 @@ setCategoryData(data)
   
   return (
     <>
-      {categoryData !== [] ? (
-        <>
-          <div className=" rounded-lg mt-12 sm:mt-20 dark:text-white">
-            <div className="flex flex-row items-center  mb-8 sm:mb-12 justify-between">
-              <h2 className="text-lg sm:text-2xl  text-emerald-500 font-serif italic font-semibold">
-                Filter by cuisine :
-              </h2>
-            </div>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {categoryData.map((data) => {
-                return (
-                  <li key={data.filterName}>
-                    <button
-                      onClick={handleFilter}
-                      className={`${data.filterName} block rounded-lg border overflow-hidden border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-zinc-800 transition duration-300 `}
-                    >
-                      <img
-                        src={data.image}
-                        alt="Italian cuisine"
-                        className="w-full h-full object-cover object-center rounded-t-lg hover:scale-125 transition-all"
-                      />
-                      {/* 
+      {isLoading ? (
+        <Loader />
+      ) : (
+        categoryData !== [] && (
+          <>
+            <div className=" rounded-lg mt-12 sm:mt-20 dark:text-white">
+              <div className="flex flex-row items-center  mb-8 sm:mb-12 justify-between">
+                <h2 className="text-lg sm:text-2xl  text-emerald-500 font-serif italic font-semibold">
+                  Filter by cuisine :
+                </h2>
+              </div>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {categoryData.map((data) => {
+                  return (
+                    <li key={data.filterName}>
+                      <button
+                        onClick={handleFilter}
+                        className={`${data.filterName} block rounded-lg border overflow-hidden border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-zinc-800 transition duration-300 `}
+                      >
+                        <img
+                          src={data.image}
+                          alt="Italian cuisine"
+                          className="w-full h-full object-cover object-center rounded-t-lg hover:scale-125 transition-all"
+                        />
+                        {/* 
                       <span className="block py-2 px-3 text-center font-medium text-gray-800 dark:text-gray-200">
                       {data.filterName}
                     </span> 
                     */}
-                    </button>
-                  </li>
+                      </button>
+                    </li>
+                  );
+                })}
+                <li className="relative group">
+                  <button
+                    onClick={() =>
+                      handleAll(filterData, setUpdatedData, setCategoryType)
+                    }
+                    id={"all_category"}
+                    className="block rounded-lg  border overflow-hidden border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-zinc-800 transition duration-300 "
+                  >
+                    <img
+                      src={"https://iili.io/HO2sH0P.md.png"}
+                      alt="Italian cuisine"
+                      className="w-full h-full object-cover object-center rounded-t-lg group-hover:scale-125 transition-all"
+                    />
+                    <h1 className="h-full  grid content-center rounded-lg bg-zinc-900 text-emerald-100 bg-opacity-40 w-full  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl sm:text-2xl italic font-serif font-semibold ">
+                      <span className="m-auto">All...</span>
+                    </h1>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <h1
+              id="category"
+              className="text-lg sm:text-2xl  text-emerald-500 font-serif italic font-semibold mt-12 "
+            >
+              Category : &nbsp; &nbsp;{categoryType}
+            </h1>
+            <div className="text-white py-10 grid grid-row grid-cols-2  gap-1 lg:grid-cols-3 xl:grid-cols-4 sm:gap-8 xl:gap-2  place-items-center">
+              {updatedData.map((data) => {
+                return (
+                  <FilterCard
+                    filterName={data.filterName}
+                    _id={data.dish.name}
+                    dish={data.dish}
+                  />
                 );
               })}
-              <li className="relative group">
-                <button
-                  onClick={() =>
-                    handleAll(filterData, setUpdatedData, setCategoryType)
-                  }
-                  id={"all_category"}
-                  className="block rounded-lg  border overflow-hidden border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-zinc-800 transition duration-300 "
-                >
-                  <img
-                    src={"https://iili.io/HO2sH0P.md.png"}
-                    alt="Italian cuisine"
-                    className="w-full h-full object-cover object-center rounded-t-lg group-hover:scale-125 transition-all"
-                  />
-                  <h1 className="h-full  grid content-center rounded-lg bg-zinc-900 text-emerald-100 bg-opacity-40 w-full  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl sm:text-2xl italic font-serif font-semibold ">
-                    <span className="m-auto">All...</span>
-                  </h1>
-                </button>
-              </li>
-            </ul>
-          </div>
-          <h1
-            id="category"
-            className="text-lg sm:text-2xl  text-emerald-500 font-serif italic font-semibold mt-12 "
-          >
-            Category : &nbsp; &nbsp;{categoryType}
-          </h1>
-          <div className="text-white py-10 grid grid-row grid-cols-2  gap-1 lg:grid-cols-3 xl:grid-cols-4 sm:gap-8 xl:gap-2  place-items-center">
-            {updatedData.map((data) => {
-              return (
-                <FilterCard
-                  filterName={data.filterName}
-                  _id={data.dish.name}
-                  dish={data.dish}
-                />
-              );
-            })}
-          </div>
-        </>
-      ) : (
-        ""
+            </div>
+          </>
+        )
       )}
     </>
   );
