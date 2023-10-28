@@ -2,7 +2,7 @@ import './App.css';
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import myGif from "./assets/face-savoring-food_1f60b.gif";
-import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, } from 'react-router-dom';
 import Home from './screens/Home';
 import SignUp from './screens/SignUp';
 import SignIn from './screens/SignIn';
