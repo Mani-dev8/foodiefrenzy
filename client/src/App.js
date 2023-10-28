@@ -95,6 +95,7 @@ function App() {
         <div className="dark:bg-black ">
           <Router>
             <Routes>
+              <Route path='/' element={<Navigate to="/home" replace />} />
               <Route path='/settings' element={<Setting />} />
               <Route path='/food_category' element={<FoodCategory />} />
               <Route path={'/home'} element={<Home />} />
